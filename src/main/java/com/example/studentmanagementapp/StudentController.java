@@ -30,6 +30,11 @@ public class StudentController {
     }
 
     //delete a student --> request param
+    @DeleteMapping("/deleteStudent")
+    public String deleteStudent(@RequestParam("id") int regno){
+        db.remove(regno);
+        return "Delete the Student successfully";
+    }
 
     //delete a student --> path variable
 
