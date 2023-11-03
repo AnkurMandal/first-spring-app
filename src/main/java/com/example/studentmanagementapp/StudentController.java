@@ -37,6 +37,11 @@ public class StudentController {
     }
 
     //delete a student --> path variable
+    @DeleteMapping("/deleteStudentByPath/{id}")
+    public String deleteStudentByPath(@PathVariable("id") int regno){
+        db.remove(regno);
+        return "Delete the Student successfully by path varible";
+    }
 
     //change of a student (regno,newCourse) --> request param
 
