@@ -1,7 +1,7 @@
 package com.example.studentmanagementapp;
 
 public class Student {
-    private int regno;
+    private int regNo;
     private  String name;
     private  int age;
     private  String course;
@@ -9,19 +9,19 @@ public class Student {
     public Student() {
     }
 
-    public Student(int regno, String name, int age, String course) {
-        this.regno = regno;
+    public Student(int regNo, String name, int age, String course) {
+        this.regNo = regNo;
         this.name = name;
         this.age = age;
         this.course = course;
     }
 
-    public int getRegno() {
-        return regno;
+    public int getRegNo() {
+        return regNo;
     }
 
-    public void setRegno(int regno) {
-        this.regno = regno;
+    public void setRegNo(int regno) {
+        this.regNo = regno;
     }
 
     public String getName() {
