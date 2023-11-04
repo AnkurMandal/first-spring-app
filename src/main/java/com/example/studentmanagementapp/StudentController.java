@@ -56,6 +56,17 @@ public class StudentController {
         db.get(regNo).setCourse(newCourse);
         return db.get(regNo);
     }
+    //change course --> one as request param,one as path variable
+    @PutMapping("/updateCourseByPathAndParam/{id}")
+    public Student updateCourseByPathAndParam(@PathVariable("id") int regNo,@RequestParam("newCourse") String newCourse){
+        db.get(regNo).setCourse(newCourse);
+        return db.get(regNo);
+    }
+
+    //change course and age -->regNo as request param,entire student object as request body
+    public Student updateCourseAndAge(int regNo,Student student){
+        return db.get(regNo);
+    }
 
 
 }
