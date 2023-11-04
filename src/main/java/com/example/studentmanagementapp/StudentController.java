@@ -51,5 +51,11 @@ public class StudentController {
     }
 
     //change of a student --> both as pathvarible
+    @PutMapping("/updateCourseByPath/{id}/{newCourse}")
+    public Student updateCourseByPath(@PathVariable("id") int regNo,@PathVariable("newCourse") String newCourse){
+        db.get(regNo).setCourse(newCourse);
+        return db.get(regNo);
+    }
+
 
 }
