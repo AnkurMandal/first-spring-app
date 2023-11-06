@@ -15,8 +15,12 @@ public class StudentController {
     @Autowired
     StudentService studentService;
 
+//    @Autowired
+//    StudentRepository studentRepository;
+
     @PostMapping("/add")
     public String addStudent(@RequestBody Student student){
+        System.out.println("Service bean called in Controller: "+studentService);
         return studentService.addStudent(student);
 
 
@@ -24,6 +28,7 @@ public class StudentController {
 
     @GetMapping("/get")
     public ResponseEntity getStudent(@RequestParam("q") int regNo){
+        System.out.println("Service bean called in Controller: "+studentService);
         Student student=studentService.getStudent(regNo);
         if(student==null){
             return new ResponseEntity<>("Id doesn't exist",HttpStatus.NOT_FOUND);

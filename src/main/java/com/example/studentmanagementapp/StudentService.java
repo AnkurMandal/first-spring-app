@@ -6,14 +6,19 @@ import org.springframework.stereotype.Service;
 @Service
 public class StudentService {
 
+//    @Autowired
+//    StudentService studentService;
     @Autowired
     StudentRepository studentRepository;
-    public Student getStudent(int regNo){
-        return studentRepository.getStudent(regNo);
-    }
+
 
     public String addStudent(Student student) {
+        System.out.println("Repo bean called in Service: "+studentRepository);
         return studentRepository.addStudent(student);
+    }
+    public Student getStudent(int regNo){
+        System.out.println("Repo bean called in Service: "+studentRepository);
+        return studentRepository.getStudent(regNo);
     }
 
     public Student getStudentByPath(int regNo) {
