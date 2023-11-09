@@ -13,11 +13,11 @@ public class StudentService {
 
 
     public String addStudent(Student student) {
-        System.out.println("Repo bean called in Service: "+studentRepository);
+//        System.out.println("Repo bean called in Service: "+studentRepository);
         return studentRepository.addStudent(student);
     }
     public Student getStudent(int regNo){
-        System.out.println("Repo bean called in Service: "+studentRepository);
+//        System.out.println("Repo bean called in Service: "+studentRepository);
         return studentRepository.getStudent(regNo);
     }
 

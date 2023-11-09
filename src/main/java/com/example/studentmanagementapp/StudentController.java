@@ -10,6 +10,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/student")
+//@Slf4j
 public class StudentController {
 
     @Autowired
@@ -20,7 +21,8 @@ public class StudentController {
 
     @PostMapping("/add")
     public String addStudent(@RequestBody Student student){
-        System.out.println("Service bean called in Controller: "+studentService);
+//        System.out.println("Service bean called in Controller: "+studentService);
+//        log.warn("this is a WARN log");
         return studentService.addStudent(student);
 
 
@@ -28,7 +30,7 @@ public class StudentController {
 
     @GetMapping("/get")
     public ResponseEntity getStudent(@RequestParam("q") int regNo){
-        System.out.println("Service bean called in Controller: "+studentService);
+//        System.out.println("Service bean called in Controller: "+studentService);
         Student student=studentService.getStudent(regNo);
         if(student==null){
             return new ResponseEntity<>("Id doesn't exist",HttpStatus.NOT_FOUND);

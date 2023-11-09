@@ -5,6 +5,7 @@ public class Student {
     private  String name;
     private  int age;
     private  String course;
+    private Month monthOfBirth =Month.JULY;
 
     public Student() {
     }
