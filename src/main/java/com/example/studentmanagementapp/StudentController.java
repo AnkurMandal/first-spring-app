@@ -1,5 +1,6 @@
 package com.example.studentmanagementapp;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,7 +11,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/student")
-//@Slf4j
+@Slf4j
 public class StudentController {
 
     @Autowired
@@ -22,7 +23,11 @@ public class StudentController {
     @PostMapping("/add")
     public String addStudent(@RequestBody Student student){
 //        System.out.println("Service bean called in Controller: "+studentService);
-//        log.warn("this is a WARN log");
+        log.trace("this is a TRACE log");
+        log.debug("this is a DEBUG log");
+        log.info("this is a INFO log");
+        log.warn("this is a WARN log");
+        log.error("this is a ERROR log");
         return studentService.addStudent(student);
 
 
